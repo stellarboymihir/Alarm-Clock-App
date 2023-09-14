@@ -1,5 +1,5 @@
+import 'package:clock_app/constant/theme.dart';
 import 'package:clock_app/data.dart';
-import 'package:clock_app/model/theme.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
@@ -18,15 +18,14 @@ class _AlarmPageState extends State<AlarmPage> {
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 64),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
+        children: <Widget>[
+          Text(
             'Alarm',
             style: TextStyle(
-              fontFamily: 'avenir',
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-              fontSize: 24,
-            ),
+                fontFamily: 'avenir',
+                fontWeight: FontWeight.w700,
+                color: CustomColors.primaryTextColor,
+                fontSize: 24),
           ),
           Expanded(
             child: ListView(
@@ -34,8 +33,6 @@ class _AlarmPageState extends State<AlarmPage> {
                 return Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  color: Colors.redAccent,
-                  height: 100,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: alarm.gradientColors,
@@ -44,71 +41,72 @@ class _AlarmPageState extends State<AlarmPage> {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: alarm.gradientColors.last.withOpacity(0.5),
+                        color: alarm.gradientColors.last.withOpacity(0.4),
                         blurRadius: 8,
                         spreadRadius: 2,
                         offset: const Offset(4, 4),
                       )
                     ],
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: const BorderRadius.all(Radius.circular(24)),
                   ),
-                  child: Column(children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Row(
-                          children: [
-                            Icon(
-                              Icons.label,
-                              color: Colors.white,
-                              size: 24,
-                            ),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Text(
-                              'Office',
-                              style: TextStyle(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          const Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.label,
                                 color: Colors.white,
-                                fontFamily: 'avenir',
+                                size: 24,
                               ),
-                            ),
-                          ],
-                        ),
-                        Switch(
-                          onChanged: (value) {},
-                          value: true,
-                          activeColor: Colors.white,
-                        ),
-                      ],
-                    ),
-                    const Text(
-                      'Mon-Fri',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'avenir',
-                      ),
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '07:00 AM',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'avenir',
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
+                              SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                'Office',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'avenir',
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Icon(
-                          Icons.keyboard_arrow_down,
-                          size: 24,
-                          color: Colors.white,
-                        ),
-                      ],
-                    )
-                  ]),
+                          Switch(
+                            onChanged: (bool value) {},
+                            value: true,
+                            activeColor: Colors.white,
+                          ),
+                        ],
+                      ),
+                      const Text(
+                        'Mon-Fri',
+                        style: TextStyle(
+                            color: Colors.white, fontFamily: 'avenir'),
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            '07:00 AM',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'avenir',
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Icon(
+                        Icons.keyboard_arrow_down,
+                        size: 36,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
                 );
               }).followedBy([
                 DottedBorder(
@@ -118,36 +116,37 @@ class _AlarmPageState extends State<AlarmPage> {
                   radius: const Radius.circular(24),
                   dashPattern: const [5, 4],
                   child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.redAccent,
-                        borderRadius: BorderRadius.circular(24),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: CustomColors.clockBG,
+                      borderRadius: const BorderRadius.all(Radius.circular(24)),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 32, vertical: 16),
+                    child: TextButton(
+                      // padding: const EdgeInsets.symmetric(
+                      //     horizontal: 32, vertical: 16),
+                      onPressed: () {},
+                      child: Column(
+                        children: [
+                          Image.asset('assets/add_alarm.png', scale: 1.5),
+                          const SizedBox(height: 8),
+                          const Text(
+                            'Add Alarm',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'avenir',
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700),
+                          ),
+                        ],
                       ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 32, vertical: 16),
-                      child: TextButton(
-                        // padding: const EdgeInsets.symmetric(
-                        //     horizontal: 32, vertical: 16),
-                        onPressed: () {},
-                        child: Column(
-                          children: [
-                            Image.asset('assets/add_alarm.png', scale: 1.5),
-                            const SizedBox(height: 8),
-                            const Text(
-                              'Add Alarm',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'avenir',
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w700),
-                            )
-                          ],
-                        ),
-                      )),
-                ),
+                    ),
+                  ),
+                )
               ]).toList(),
             ),
-          )
+          ),
         ],
       ),
     );

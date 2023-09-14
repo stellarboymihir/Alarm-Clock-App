@@ -1,4 +1,4 @@
-import 'package:clock_app/clock_view.dart';
+import 'package:clock_app/view/clock_view.dart';
 import 'package:clock_app/data.dart';
 import 'package:clock_app/enum.dart';
 import 'package:clock_app/model/menu_info.dart';
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: menuItems
-                .map((e) => buildMenuButton(e.title, e.imageSource, e))
+                .map((e) => buildMenuButton(/*e.title, e.imageSource,*/ e))
                 .toList(),
           ),
           const VerticalDivider(
@@ -142,7 +142,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildMenuButton(String title, String image, MenuInfo currentMenuInfo) {
+  Widget buildMenuButton(
+      /*String title, String image,*/ MenuInfo currentMenuInfo) {
     return Consumer<MenuInfo>(
       builder: (BuildContext context, MenuInfo value, Widget? child) {
         // var menuBackgroundColor;
@@ -162,7 +163,7 @@ class _HomePageState extends State<HomePage> {
               menuInfo.updateMenuInfo(currentMenuInfo);
             },
             child: Column(
-              children: [
+              children: <Widget>[
                 Image.asset(
                   currentMenuInfo.imageSource,
                   scale: 1.5,
