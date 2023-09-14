@@ -52,11 +52,11 @@ class _AlarmPageState extends State<AlarmPage> {
                     ],
                     borderRadius: BorderRadius.circular(24),
                   ),
-                  child: const Column(children: [
+                  child: Column(children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
+                        const Row(
                           children: [
                             Icon(
                               Icons.label,
@@ -76,20 +76,20 @@ class _AlarmPageState extends State<AlarmPage> {
                           ],
                         ),
                         Switch(
+                          onChanged: (value) {},
                           value: true,
-                          onChanged: (bool value) {},
                           activeColor: Colors.white,
                         ),
                       ],
                     ),
-                    Text(
+                    const Text(
                       'Mon-Fri',
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: 'avenir',
                       ),
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
@@ -116,7 +116,7 @@ class _AlarmPageState extends State<AlarmPage> {
                   color: CustomColors.clockOutline,
                   borderType: BorderType.RRect,
                   radius: const Radius.circular(24),
-                  dashPattern: [5, 4],
+                  dashPattern: const [5, 4],
                   child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(

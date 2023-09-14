@@ -1,7 +1,7 @@
 import 'package:clock_app/clock_view.dart';
 import 'package:clock_app/data.dart';
 import 'package:clock_app/enum.dart';
-import 'package:clock_app/menu_info.dart';
+import 'package:clock_app/model/menu_info.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';

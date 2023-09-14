@@ -1,6 +1,6 @@
 import 'package:clock_app/enum.dart';
-import 'package:clock_app/menu_info.dart';
 import 'package:clock_app/model/alarm_info.dart';
+import 'package:clock_app/model/menu_info.dart';
 import 'package:clock_app/model/theme.dart';
 
 List<MenuInfo> menuItems = [

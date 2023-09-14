@@ -1,5 +1,5 @@
 import 'package:clock_app/enum.dart';
-import 'package:clock_app/menu_info.dart';
+import 'package:clock_app/model/menu_info.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'homepage.dart';
