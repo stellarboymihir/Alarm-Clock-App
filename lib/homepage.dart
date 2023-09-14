@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                 vertical: 16,
               ),
               backgroundColor: currentMenuInfo.menuType == value.menuType
-                  ? Color.fromARGB(195, 2, 3, 34)
+                  ? const Color.fromARGB(195, 2, 3, 34)
                   : Colors.transparent,
             ),
             onPressed: () {
